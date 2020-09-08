@@ -179,4 +179,9 @@ footer{
     .perks-container{
         grid-area: perks;
     }
+    .text-container,
+    .subscription-container,
+    .perks-container{
+        padding: 3rem;
+    }
 }
