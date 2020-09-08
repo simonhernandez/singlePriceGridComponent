@@ -36,9 +36,9 @@
         --fs-h2: 2rem;
         --fs-h3: 1.5rem;
         --fs-h4: 1.3rem;
-        --fs-big: 1.17rem;
+        --fs-big: 2.5rem;
         --fs-normal: 1rem;
-        --fs-small: .938rem;
+        --fs-small: .813rem;
     }
 }
 /* ---- General Styles ---- */
@@ -103,9 +103,6 @@ h4{font-size: var(--fs-h4);}
 }
 /* ---- Section Styles ---- */
 /* Memberships */
-.memberships{
-    border: 1px solid red;
-}
 .membership-container{
     background-color: var(--clr-white);
     border-radius: .35rem;
@@ -148,17 +145,41 @@ h4{font-size: var(--fs-h4);}
 }
 .membership__pricing{
     font-size: var(--fs-big);
+    font-weight: var(--fw-bold);
 }
 .membership__pricing span{
     font-size: var(--fs-normal);
+    font-weight: var(--fw-reg);
     opacity: .5;
     vertical-align: middle;
 }
 .perks__item{
-    margin-bottom: .25rem;
+    font-size: var(--fs-small);
+    margin-bottom: .45rem;
 }
 /* ---- Footer ---- */
 footer{
     align-self: flex-end;
 }
 /* ---- Media Queries ---- */
+@media screen and (min-width: 600px){
+    .membership-container{
+        max-width: 720px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: "text ."
+                             "sub perks";
+        
+    }
+    .text-container{
+        grid-area: text;
+        grid-column: 1/-1;
+    }
+    .subscription-container{
+        grid-area: sub;
+
+    }
+    .perks-container{
+        grid-area: perks;
+    }
+}
