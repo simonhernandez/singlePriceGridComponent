@@ -8,23 +8,26 @@
     --clr-yellow: hsl(71, 73%, 54%);
     --clr-lightgray: hsl(204, 43%, 93%);
     --clr-grayblue: hsl(218, 22%, 67%);
+    --clr-white: #fff;
 
     /* Font and Typography */
 
     --ff-primary: 'Karla', sans-serif;
 
     --fs-h1: 2rem;
-    --fs-h2: 1.5rem;
-    --fs-h3: 1.3rem;
-    --fs-h4: 1.17rem;
-    --fs-big: 1rem;
-    --fs-normal: .938rem;
-    --fs-small: .813rem;
+    --fs-h2: 1.3rem;
+    --fs-h3: 1.17rem;
+    --fs-h4: 1rem;
+    --fs-big: 2rem;
+    --fs-normal: .813rem;
+    --fs-small: .745rem;
 
     --fw-reg: 400;
     --fw-bold: 700;
 
     /* Box Shadow */
+    --bxs-container:0px 2.5px 29px -10px rgba(152,166,189,1);
+    --bxs-btn: 0px 5px 16px -10px rgba(0,0,0,0.75);
     /* Others */
 }
 @media screen and (min-width: 768px){
@@ -73,7 +76,10 @@ h2{font-size: var(--fs-h2);}
 h3{font-size: var(--fs-h3);}
 h4{font-size: var(--fs-h4);}
 /* Layout */
-section.memberships{
+.section{
+    padding: 0 2rem;
+}
+.section.memberships{
     min-height: 100vh;
     
     display: flex;
@@ -82,10 +88,74 @@ section.memberships{
     flex-direction: column;
 }
 /* Components */
+.btn{
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    font-family: inherit;
+    font-size: inherit;
+    box-shadow: var(--bxs-btn);
+}
+.btn-primary{
+    background-color: var(--clr-yellow);
+    color: var(--clr-white);
+    border-radius: .35rem;
+}
 /* ---- Section Styles ---- */
 /* Memberships */
 .memberships{
-    
+    border: 1px solid red;
+}
+.membership-container{
+    background-color: var(--clr-white);
+    border-radius: .35rem;
+    box-shadow: var(--bxs-container);
+    overflow: hidden;
+}
+.text-container,
+.subscription-container,
+.perks-container{
+    padding: 1.5rem;
+    /* padding-bottom: 0; */
+}
+.text-container > *:not(:last-child),
+.subscription-container > *:not(:last-child),
+.perks-container > *:not(:last-child){
+    margin-bottom: 1rem;
+}
+.text-container{
+    color: var(--clr-grayblue);
+}
+.subscription-container,
+.perks-container{
+    color: var(--clr-lightgray);
+    background-color: var(--clr-cyan);
+}
+.perks-container{
+    opacity: .8;
+}
+.membership__title{
+    color: var(--clr-cyan);
+}
+.membership__subtitle--green{
+    color: var(--clr-yellow);
+}
+.membership__subtitle--white{
+    color: var(--clr-white);
+}
+.membership__description{
+    line-height: 1.6;
+}
+.membership__pricing{
+    font-size: var(--fs-big);
+}
+.membership__pricing span{
+    font-size: var(--fs-normal);
+    opacity: .5;
+    vertical-align: middle;
+}
+.perks__item{
+    margin-bottom: .25rem;
 }
 /* ---- Footer ---- */
 footer{
